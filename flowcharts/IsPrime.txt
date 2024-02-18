@@ -1,0 +1,17 @@
+flowchart TD;
+    A([Start]) --> B[/Read num/];
+    B --> C{num <= 1}
+    C --> |True|Y[/Not Prime/]
+    C --> |False|D[int i = 2]
+    D --> E{
+        while
+        i < sqrt of num
+    }
+    E --> |True| F{
+        if num % i == 0
+    }
+    F --> |True| X[/Prime/]
+    F --> E
+    E --> Y
+    Y --> Z([End])
+    X --> Z

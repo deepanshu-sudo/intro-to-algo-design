@@ -1,0 +1,18 @@
+flowchart TD
+    A[Start] --> B[/Input: array, start, end/]
+    B --> C["pivot = array[end]"]
+    C --> D["i = start-1"]
+    D --> E["j = start"]
+    E --> F{"while j <= end-1"}
+    F --> J["i++"]
+    J --> K["swap(array[i],array[end])"]
+    K --> L[/return i/]
+    L --> M([End])
+    F --> |True|G{"if array[j] < pivot"}
+    G --> |True|H["i++"]
+    G --> |False|F
+    H --> I["swap(array[i],array[j])"]
+    I --> F
+
+    
+    

@@ -1,0 +1,12 @@
+flowchart TD
+    A([Start]) --> B[/Get num1, num2/]
+    B --> C{While
+    num2 != 0}
+    C --> |True| D[
+        temp = num2
+        num2 = num1 % num2
+        num1 = temp
+    ]
+    D --> C
+    C --> |False| E[/Print num1 as GCD /]
+    E --> F([End])

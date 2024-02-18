@@ -1,0 +1,11 @@
+flowchart TD
+    A([Start]) --> B[/Get Number/]
+    B --> C[Initialize i==2]
+    C --> D{While i * i <= Number}
+    D --> |True| E{Number % i == 0}
+    E --> |True| G[/Print Smallest Divisor/]
+    G --> H[Break Loop]
+    H --> I([End])
+    E --> |False| D
+    D --> |False| F[/Print Number is Prime/]
+    F --> I([End])

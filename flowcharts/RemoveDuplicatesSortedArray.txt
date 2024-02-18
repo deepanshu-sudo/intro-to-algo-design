@@ -1,0 +1,13 @@
+flowchart TD
+    A[Start] --> B[/"Input: nums[] sorted"/]
+    B --> C{"nums.length is 0 or 1"}
+    C --> |True|D[/return nums.length/]
+    D --> Z([End])
+    C --> |False|E[i = 0, j = 0]
+    E --> F{"while i < nums.length - 1"}
+    F --> I["nums[j++]=nums[(nums.length-1)]"]
+    I --> J[/return j/]
+    J --> Z
+    F --> |True|G{"if nums[i] != nums[i+1]"}
+    G --> |True|H["nums[j++] = nums[i]"]
+    H --> F

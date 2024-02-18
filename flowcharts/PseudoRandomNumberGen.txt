@@ -1,0 +1,17 @@
+flowchart TB;
+    A([Start]) --> B[Initialize seed, modulus, multiplier, increment, and noOfRandomNums]
+    B --> C["Initialize an array randomNums[noOfrandomNums]"]
+    C --> D["Set randomNums[0] to seed"]
+    D --> E["Set i to 1"]
+    E --> F{"
+        while
+        i < noOfRandomNums
+    "}
+    F --> |True|G["
+    Calculate randomNums[i] using LCM formula
+    increment i by 1
+    "]
+    G --> F
+    F --> |False|I[End While]
+    I --> J[End Program]
+    

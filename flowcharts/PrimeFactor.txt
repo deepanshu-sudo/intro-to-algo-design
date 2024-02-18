@@ -1,0 +1,31 @@
+---
+title: finding the prime factorization of a number
+---
+flowchart TD
+    A([Start]) --> B[/Read num/]
+    B --> C{
+        while
+        num%2 == 0
+    }
+    C --> |True| E[/Print "2 "/]
+    E --> F[num /= 2]
+    F --> C
+    C --> |False| G[j = 3]
+    G --> H{
+        while
+        j <= sqrt_num
+    }
+    H --> I{
+        while
+        num % j == 0
+    }
+    I --> |False| H
+    I --> |True| J[/Print "j "/]
+    J --> K[num /= j]
+    K --> I
+    H --> |False|L{
+        if num > 1
+    }
+    L --> |True|M[/Print num/]
+    L --> |False|N([End])
+    M --> N

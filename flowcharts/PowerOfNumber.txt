@@ -1,0 +1,15 @@
+flowchart TD;
+        A(["Start"]) --> B["Input base and exponent"]
+        B --> C["Function: power(base, exponent)"]
+        C --> D{exponent == 0}
+        D --> |True|E["Return 1.0"]
+        D --> |False|F["Set halfPower to power(base, exponent / 2)"]
+        F --> G{exponent is even}
+        G --> |True|H["Return halfPower * halfPower"]
+        G --> |False|I{exponent is positive and odd}
+        I --> |True|J["Return base * halfPower * halfPower"]
+        I --> |False|K{exponent is negative and odd}
+        K --> |True|L["Return (halfPower * halfPower) / base"]
+        K --> |False|M["End Function"]
+        M --> N["Output result"]
+        N --> O(["End Program"])

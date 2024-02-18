@@ -1,0 +1,18 @@
+flowchart TD;
+    A([Start]) --> B[/Get num/];
+    B --> C[
+        guess1 = num, guess2 = 1.0
+        error = 0.00001, iterations = 0
+    ];
+    C --> D{
+        While abs of
+        guess1 - guess2
+        > error
+    };
+    D --> |True| F[
+        g1 = g2
+        Update g2 = g1 + number / g1 / 2
+        ];
+    F --> D;
+    D -->|False| G[/Print guess1/guess2 as sqrt /];
+    G --> H([End]);

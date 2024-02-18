@@ -1,0 +1,10 @@
+flowchart TD
+    A[Start] --> B[/Input: array, start, end/]
+    B --> C{"if start > end"}
+    C --> |True|Z([End])
+    C --> |False|D["pivot = partition(array,start,end)"]
+    D --> E["quickSort(array,start,pivot-1)"]
+    E --> F["quickSort(array,pivot+1,end)"]
+    E --> A
+    F --> A
+    F --> Z
